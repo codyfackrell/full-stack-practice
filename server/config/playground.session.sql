@@ -54,4 +54,5 @@ INSERT INTO sessions (date, therapist_id, client_id) VALUES
 ('2025-12-08', 1, 2);
 
 -- @block
-SELECT * FROM therapists
+SELECT * FROM clients
+WHERE therapist_id = 1;
