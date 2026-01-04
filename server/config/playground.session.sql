@@ -32,9 +32,9 @@ DESCRIBE sessions
 -- @block
 -- Seed therapists
 INSERT INTO therapists (first_name, last_name) VALUES
-('Alice', 'Johnson'),
-('Bob', 'Smith'),
-('Carol', 'Davis');
+('Chicken', 'Bake'),
+('Richard', 'Warren'),
+('Davis', 'Jackson');
 
 -- Seed clients
 INSERT INTO clients (first_name, last_name, therapist_id) VALUES
@@ -55,4 +55,11 @@ INSERT INTO sessions (date, therapist_id, client_id) VALUES
 
 -- @block
 SELECT * FROM clients
-WHERE therapist_id = 1;
+
+
+-- @block 
+INSERT INTO therapists (first_name, last_name)
+VALUES ("Lucy", "Frank")
+
+-- @block 
+DELETE FROM clients WHERE id = 10

@@ -1,0 +1,36 @@
+.client-list {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.client-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-list li {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.client-headers {
+  display: flex;
+  align-items: center;
+}
+
+.client-headers h2 {
+  margin: 0 auto; /* centers Clients */
+}
+
+.client-actions {
+  color: #339853;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding-left: 0.8rem;
+}
