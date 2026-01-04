@@ -17,10 +17,10 @@ function TherapistCard({
           className="section-actions"
           onClick={() => {
             const first_name = window.prompt("Enter therapist's first name:");
-            if (!first_name) return; // user cancelled
+            if (!first_name) return;
 
             const last_name = window.prompt("Enter therapist's last name:");
-            if (!last_name) return; // user cancelled
+            if (!last_name) return;
 
             onAddTherapist({ first_name, last_name });
           }}

@@ -21,16 +21,30 @@ const deleteTherapist = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({
-      message: "Faild to delete therapist",
+      message: "Failed to delete therapist",
     });
   }
 };
 
 const addTherapist = async (req, res) => {
-  const first_name = req.body.first_name
-  const last_name = req.body.last_name
+  const { first_name, last_name } = req.body;
+
   try {
-    await db.query("INSERT INTO therapists (first_name, last_name) VALUES (?, ?)", [first_name, last_name])
+    const [result] = await db.query(
+      "INSERT INTO therapists (first_name, last_name) VALUES (?, ?)",
+      [first_name, last_name]
+    );
+
+    const newTherapist = {
+      id: result.insertId,
+      first_name,
+      last_name,
+    };
+    res.status(201).json(newTherapist);
+  } catch (err) {
+    res.status(500).json({
+      message: "Failed to add therapist",
+    });
   }
 };
 
