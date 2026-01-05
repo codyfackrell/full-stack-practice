@@ -21,7 +21,7 @@ function App() {
     setShowClients(true);
     setSelectedTherapistId(therapistId);
 
-    fetch(`/clients/${therapistId}`)
+    fetch(`/therapists/${therapistId}/clients`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error ${res.status}`);
         return res.json();
@@ -30,7 +30,7 @@ function App() {
   };
 
   const handleAddClient = async (clientDetails) => {
-    const res = await fetch(`/clients`, {
+    const res = await fetch(`/therapists/${selectedTherapistId}/clients`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

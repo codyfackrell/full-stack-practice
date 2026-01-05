@@ -26,6 +26,13 @@ CREATE TABLE IF NOT EXISTS sessions (
     REFERENCES clients(id)
 );
 
+-- @block
+ALTER TABLE clients
+ADD CONSTRAINT fk_therapist
+FOREIGN KEY (therapist_id)
+REFERENCES therapists(id)
+ON DELETE CASCADE;
+
 -- @block 
 DESCRIBE sessions
 
@@ -54,7 +61,7 @@ INSERT INTO sessions (date, therapist_id, client_id) VALUES
 ('2025-12-08', 1, 2);
 
 -- @block
-SELECT * FROM therapists
+SELECT * FROM clients
 
 
 -- @block 
@@ -62,4 +69,7 @@ INSERT INTO therapists (first_name, last_name)
 VALUES ("Lucy", "Frank")
 
 -- @block 
-DELETE FROM clients WHERE id = 10
+DELETE FROM clients WHERE id = 15
+
+-- @block 
+SHOW CREATE TABLE clients;

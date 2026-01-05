@@ -22,7 +22,7 @@ function ClientList({
               onAddClient({
                 first_name,
                 last_name,
-                therapist_id: selectedTherapistId,
+                // therapist_id: selectedTherapistId,
               });
             }}
             className="client-actions"

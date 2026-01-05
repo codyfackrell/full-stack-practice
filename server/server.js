@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/therapists", therapistRoutes);
-app.use("/clients", clientRoutes);
+app.use("/therapists/:therapistId/clients", clientRoutes);
 
 app.listen(4000, () => {
   console.log("Server is running on port 4000");
