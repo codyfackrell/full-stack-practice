@@ -44,6 +44,7 @@ function App() {
   };
 
   const handleDeleteTherapist = (therapistId) => {
+    setShowClients(false);
     fetch(`/therapists/${therapistId}`, {
       method: "DELETE",
     }).then((res) => {
