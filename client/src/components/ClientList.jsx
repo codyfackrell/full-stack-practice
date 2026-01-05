@@ -1,5 +1,6 @@
 import { IoClose, IoAdd } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
+import "../css/ClientList.css";
 
 function ClientList({
   onAddClient,

@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import TherapistCard from "./components/TherapistCard.jsx";
 import ClientList from "./components/ClientList.jsx";
 
-import "./App.css";
-
 function App() {
   const [therapists, setTherapists] = useState([]);
   const [clients, setClients] = useState([]);
@@ -73,7 +71,9 @@ function App() {
   };
 
   const onCloseClients = () => {
-    setClients([]), setShowClients(false), setSelectedTherapistId(null);
+    setClients([]);
+    setShowClients(false);
+    setSelectedTherapistId(null);
   };
 
   return (
